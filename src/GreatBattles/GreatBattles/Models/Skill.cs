@@ -4,6 +4,18 @@ namespace GreatBattles.Models;
 
 public class Skill : ISkill
 {
+    public Skill()
+    {
+        var random = new Random();
+        Alchemy = random.Next(1, 100);
+        Witchcraft = random.Next(1, 100);
+        Destruction = random.Next(1, 100);
+        Recovery = random.Next(1, 100);
+        Shooting = random.Next(1, 100);
+        Stealth = random.Next(1, 100);
+        Breaking = random.Next(1, 100);
+        Eloquence = random.Next(1, 100);
+    }
     /// <summary>
     /// Алхимия
     /// </summary>
