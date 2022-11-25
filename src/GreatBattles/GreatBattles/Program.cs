@@ -12,6 +12,8 @@ public class Program
 
         var user = new User(GetNewValueRandom(), GetNewValueRandom(), GetNewValueRandom(), "BlackKnight", GetNewValueRandom(), GetNewValueRandom(), GetNewValueRandom(), GetNewValueRandom(), GetNewValueRandom(), GetNewValueRandom(), GetNewValueRandom(), skill);
         var mob = new Mob(GetNewValueRandom(), GetNewValueRandom(), GetNewValueRandom());
+
+        Battle(user, mob, skill);
     }
 
     static int GetNewValueRandom()
@@ -21,11 +23,31 @@ public class Program
         return newValue;
     }
 
-    static void Battle(User user, Mob mob)
+    static void Battle(User user, Mob mob, Skill skill)
     {
-        if (user.Life > mob.Life && user.Force > mob.Force)
+        var userLife = user.Life;
+        var mobLife = mob.Life;
+
+        userLife = user.Life - mob.Force;
+        mobLife = mob.Life - user.Force;
+
+        if (userLife > mobLife)
         {
+            skill.Witchcraft += 1;
+            skill.Alchemy += 1;
+            skill.Stealth += 1;
+            skill.Shooting += 1;
+            skill.Breaking += 1;
+            skill.Destruction += 1;
+            skill.Eloquence += 1;
+            skill.Recovery += 1;
             
+            Console.WriteLine("Победа! Увеличен уровень скиллов");
+        }
+        else
+        {
+            Console.WriteLine("Потрачено. Начните битву заново");
+            Environment.Exit(0);
         }
     }
 }
