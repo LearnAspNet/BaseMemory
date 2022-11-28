@@ -1,4 +1,4 @@
-﻿namespace GreatBattles.Interfaces
+﻿namespace GreatBattles.Core.App.Interfaces
 {
     public interface ISkill
     {

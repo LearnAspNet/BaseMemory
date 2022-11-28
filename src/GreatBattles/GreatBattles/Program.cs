@@ -1,5 +1,5 @@
-﻿using GreatBattles.Interfaces;
-using GreatBattles.Models;
+﻿using GreatBattles.Core.App.Interfaces;
+using GreatBattles.Core.Domain.Models;
 using System;
 
 namespace GreatBattles;

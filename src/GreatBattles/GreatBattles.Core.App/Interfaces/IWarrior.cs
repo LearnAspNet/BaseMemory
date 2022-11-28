@@ -1,4 +1,6 @@
-﻿namespace GreatBattles.Interfaces
+﻿using GreatBattles.Core.Domain.Models;
+
+namespace GreatBattles.Core.App.Interfaces
 {
     public interface IWarrior
     {
@@ -20,12 +22,12 @@
         /// <summary>
         /// Навыки
         /// </summary>
-        public ISkill Skill { get; set; }
+        public Skill Skill { get; set; }
 
         /// <summary>
         /// Обновление скиллов
         /// </summary>
         /// <param name="skill"></param>
-        public void UpdateSkills(ISkill skill);
+        public void UpdateSkills(Skill skill);
     }
 }

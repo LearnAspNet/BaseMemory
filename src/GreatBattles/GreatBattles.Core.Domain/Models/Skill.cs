@@ -1,6 +1,6 @@
-﻿using GreatBattles.Interfaces;
+﻿using GreatBattles.Core.App.Interfaces;
 
-namespace GreatBattles.Models;
+namespace GreatBattles.Core.Domain.Models;
 
 public class Skill : ISkill
 {
