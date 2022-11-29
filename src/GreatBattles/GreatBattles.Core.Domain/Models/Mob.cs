@@ -1,4 +1,4 @@
-﻿using GreatBattles.Core.App.Interfaces;
+﻿using GreatBattles.Core.Domain.Models.Interfaces;
 
 namespace GreatBattles.Core.Domain.Models;
 
