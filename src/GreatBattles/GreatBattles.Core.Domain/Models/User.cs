@@ -4,25 +4,27 @@ namespace GreatBattles.Core.Domain.Models;
 
 public class User : IUnit, IHuman, IMage
 {
-    public User(int id)
-    {
-        Id = id;
-    }
+    //public User(int id)
+    //{
+    //    var random = new Random();
+    //    Id = random.Next(1, 100);
+    //}
 
-    public User(int id, int life, int force, string name, int kindness, int honestly, int loyalty, int humor, int priest, int oracle, int necromancer, ISkill skill)
+    public User()
     {
-        Id = id;
-        Life = life;
-        Force = force;
-        Name = name;
-        Kindness = kindness;
-        Honesty = honestly;
-        Loyalty = loyalty;
-        Humor = humor;
-        Priest = priest;
-        Oracle = oracle;
-        Necromancer = necromancer;
-        Skill = skill;
+        var random = new Random();
+        Id = random.Next(1, 100);
+        Life = random.Next(1, 100);
+        Force = random.Next(1, 100);
+        Name = new Guid().ToString();
+        Kindness = random.Next(1, 100);
+        Honesty = random.Next(1, 100);
+        Loyalty = random.Next(1, 100);
+        Humor = random.Next(1, 100);
+        Priest = random.Next(1, 100);
+        Oracle = random.Next(1, 100);
+        Necromancer = random.Next(1, 100);
+        Skill = new Skill();
     }
 
     /// <summary>

@@ -1,6 +1,4 @@
-﻿using GreatBattles.Core.Domain.Models.Interfaces;
-
-namespace GreatBattles.Core.App.Interfaces
+﻿namespace GreatBattles.Core.Domain.Models.Interfaces
 {
     public interface IWarrior
     {

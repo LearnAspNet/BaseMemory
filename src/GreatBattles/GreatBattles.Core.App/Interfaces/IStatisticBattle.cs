@@ -1,6 +1,8 @@
-﻿namespace GreatBattles.Core.App.Interfaces
+﻿using GreatBattles.Core.Domain.Models;
+
+namespace GreatBattles.Core.App.Interfaces
 {
-    public interface IStatisticBattle
+    public interface IStatisticBattleService
     {
         public Statistic GetStatistic();
 
