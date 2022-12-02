@@ -3,24 +3,25 @@ using GreatBattles.Core.Domain.Models;
 
 namespace GreatBattles.Core.App.Services
 {
-    public class StatisticBattle : IStatisticBattleService
+    public class StatisticBattleService : IStatisticBattleService
     {
         public Statistic GetStatistic()
         {
-            var skills = new Skill();
+            
+            var statistic = new Statistic(5, 10, 300);
 
-            var user = new List<User>();
-            var battle = new List<Battle>();
-            user.Add(new User());
-            var statistic = new Statistic("Fedor", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, skills, 12, 13, 14, user, );
+            Console.WriteLine($"Раненых: {statistic.Wounded} \nУбитых: {statistic.Killed} \nОбщий урон: {statistic.Damage}");
 
             return statistic;
         }
 
         public Statistic GetStatisticBattles()
         {
-            var statisticBattle = new Statistic();
-            return new Statistic();
+            var statisticBattle = new Statistic(1000);
+
+            Console.WriteLine($"Общий урон: {statisticBattle.Damage}");
+
+            return statisticBattle;
         }
     }
 }

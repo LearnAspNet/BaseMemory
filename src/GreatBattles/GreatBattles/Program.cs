@@ -13,8 +13,13 @@ public class Program
         var mob = new Mob(GetNewValueRandom(), GetNewValueRandom(), GetNewValueRandom());
 
         var battleService = new BattleService();
+        var staticticBattleService = new StatisticBattleService();
 
-        battleService.Battle(user, mob, skill);
+        //battleService.Battle(user, mob, skill);
+
+        staticticBattleService.GetStatistic(); 
+
+        staticticBattleService.GetStatisticBattles();
     }
 
     static int GetNewValueRandom()

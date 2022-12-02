@@ -2,6 +2,18 @@
 {
     public class Statistic
     {
+        public Statistic(int damage)
+        {
+            Damage = damage;
+        }
+
+        public Statistic(int wounded, int killed, int damage)
+        {
+            Wounded = wounded;
+            Killed = killed;
+            Damage = damage;
+        }
+
         /// <summary>
         /// Кол-во раненых
         /// </summary>
