@@ -7,33 +7,46 @@ namespace GreatBattles.Core.App.Services
     {
         public PveBattle Battle(User user, Mob mob)
         {
-            var userLife = user.Life - mob.Force;
-            var mobLife = mob.Life - user.Force;
             var pveBattle = new PveBattle();
             pveBattle.Id = 0;
             pveBattle.Score = 0;
+
             var usersLife = pveBattle.NumbersOfPlayers * user.Life;
             var mobsLife = pveBattle.NumbersOfMobs * mob.Life;
-            var usersForce = pveBattle.NumbersOfPlayers * user.Force;
-            var mobsForce = pveBattle.NumbersOfMobs * mob.Force;
-            
-            
 
-            if (userLife > mobLife)
+            var usersForce = pveBattle.NumbersOfPlayers * user.Force;
+            var mobsForce = pveBattle.NumbersOfMobs * mob.Force;  
+
+            while(true)
             {
-                pveBattle.Winner = "Users";
-            }
-            else
-            {
-                pveBattle.Winner = "Mobs";
-            }
-            
+                var remainderOfUsersLife = usersLife - mobsForce; // остаток жизней у Игроков
+                var remainderOfMobsLife = mobsLife - usersForce; // остаток жизней у Мобов
+
+                usersLife = remainderOfUsersLife;
+                mobsLife = remainderOfMobsLife;
+
+                if(remainderOfUsersLife > remainderOfMobsLife && remainderOfMobsLife < 0)
+                {
+                    pveBattle.Winner = "Users";
+                    pveBattle.Id += 1;
+                    pveBattle.Score += remainderOfUsersLife;
+                }
+                else if(remainderOfMobsLife > remainderOfUsersLife && remainderOfUsersLife < 0)
+                {
+                    pveBattle.Winner = "Mobs";
+                    pveBattle.Id += 1;
+                    pveBattle.Score += remainderOfMobsLife;
+                }
+            }            
             return pveBattle;
         }
 
         public PvpBattle PvpBattle(User user)
         {
             var pvpBattle = new PvpBattle();
+            
+
+
             return pvpBattle;
         }
 
